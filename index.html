@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Pulmo Disorders — Non-Infectious Pulmonary Conditions</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+  :root{--bg:#09090f;--surface:#111118;--border:rgba(255,255,255,0.07);--text:#e8e8f0;--muted:#6b6b80;--accent:#26c6da;--accent-dim:rgba(38,198,218,0.1);}
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;}
+  .topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:12px 28px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+  .topbar-left{display:flex;align-items:center;gap:16px;}
+  .hub-link{text-decoration:none;color:var(--muted);font-size:12px;font-family:'DM Mono',monospace;letter-spacing:1px;transition:color 0.2s;}
+  .hub-link:hover{color:var(--accent);}
+  .sep{color:var(--border);}
+  .repo-badge{font-family:'DM Mono',monospace;font-size:10px;letter-spacing:2px;color:var(--accent);text-transform:uppercase;background:var(--accent-dim);border:1px solid rgba(38,198,218,0.25);border-radius:4px;padding:3px 10px;}
+  .topbar-right{font-size:11px;color:var(--muted);font-family:'DM Mono',monospace;}
+  .hero{padding:52px 40px 40px;border-bottom:1px solid var(--border);background:radial-gradient(ellipse at top left,rgba(38,198,218,0.07) 0%,transparent 60%);}
+  .hero-emoji{font-size:40px;margin-bottom:12px;display:block;}
+  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(28px,4vw,44px);font-weight:900;letter-spacing:-0.5px;line-height:1.1;color:#fff;margin-bottom:10px;}
+  .hero h1 span{color:var(--accent);}
+  .hero-desc{font-size:14px;color:var(--muted);max-width:560px;line-height:1.6;}
+  .hero-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;}
+  .hero-tag{font-size:11px;font-family:'DM Mono',monospace;background:var(--accent-dim);border:1px solid rgba(38,198,218,0.2);color:var(--accent);border-radius:4px;padding:3px 10px;}
+  .layout{display:flex;min-height:calc(100vh - 160px);}
+  .sidebar{width:220px;flex-shrink:0;border-right:1px solid var(--border);padding:24px 0;position:sticky;top:57px;height:calc(100vh - 57px);overflow-y:auto;}
+  .sidebar::-webkit-scrollbar{width:4px;}
+  .nav-group{margin-bottom:24px;}
+  .nav-group-label{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;padding:0 20px 8px;display:block;}
+  .nav-link{display:flex;align-items:center;justify-content:space-between;padding:7px 20px;font-size:13px;color:var(--muted);text-decoration:none;transition:color 0.2s;border-left:2px solid transparent;gap:8px;}
+  .nav-link:hover{color:var(--text);}
+  .nav-link.ready:hover{color:var(--accent);border-left-color:var(--accent);}
+  .dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+  .dot-soon{background:var(--muted);opacity:0.4;}
+  .main{flex:1;padding:36px 40px;}
+  .section-title{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;color:var(--muted);text-transform:uppercase;margin-bottom:16px;margin-top:36px;}
+  .section-title:first-child{margin-top:0;}
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-bottom:8px;}
+  .card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;text-decoration:none;color:inherit;display:block;transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s;position:relative;}
+  .card.ready:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 8px 24px rgba(38,198,218,0.08);}
+  .card.soon{opacity:0.55;cursor:default;}
+  .card-num{font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);margin-bottom:6px;}
+  .card-name{font-size:14px;font-weight:500;color:#fff;margin-bottom:6px;line-height:1.3;}
+  .card-sub{font-size:12px;color:var(--muted);line-height:1.4;}
+  .card-status{position:absolute;top:16px;right:16px;font-size:9px;font-family:'DM Mono',monospace;letter-spacing:1px;border-radius:4px;padding:2px 7px;text-transform:uppercase;}
+  .status-ready{background:rgba(38,198,218,0.12);color:var(--accent);border:1px solid rgba(38,198,218,0.2);}
+  .status-soon{background:rgba(255,255,255,0.04);color:var(--muted);border:1px solid rgba(255,255,255,0.06);}
+</style>
+</head>
+<body>
+<nav class="topbar">
+  <div class="topbar-left">
+    <a href="https://Nandapulmonotes.github.io/pulmo-hub/" class="hub-link">← HUB</a>
+    <span class="sep">|</span>
+    <span class="repo-badge">pulmo-misc</span>
+  </div>
+  <div class="topbar-right">Non-Infectious Pulmonary Conditions</div>
+</nav>
+<div class="hero">
+  <span class="hero-emoji">🫀</span>
+  <h1>Pulmo <span>Disorders</span></h1>
+  <p class="hero-desc">Non-infectious pulmonary conditions — pulmonary embolism, pulmonary hypertension, pleural diseases, lung malignancy, sleep disorders, occupational lung diseases, and respiratory failure.</p>
+  <div class="hero-tags">
+    <span class="hero-tag">PE / DVT</span><span class="hero-tag">Pulm HTN</span><span class="hero-tag">Pleural Disease</span>
+    <span class="hero-tag">Malignancy</span><span class="hero-tag">OSA</span><span class="hero-tag">Occupational</span>
+  </div>
+</div>
+<div class="layout">
+  <aside class="sidebar">
+    <div class="nav-group">
+      <span class="nav-group-label">Vascular</span>
+      <a href="#" class="nav-link soon"><span>Pulmonary Embolism</span><span class="dot dot-soon"></span></a>
+      <a href="#" class="nav-link soon"><span>Pulmonary Hypertension</span><span class="dot dot-soon"></span></a>
+    </div>
+    <div class="nav-group">
+      <span class="nav-group-label">Pleural</span>
+      <a href="#" class="nav-link soon"><span>Pleural Effusion</span><span class="dot dot-soon"></span></a>
+      <a href="#" class="nav-link soon"><span>Pneumothorax</span><span class="dot dot-soon"></span></a>
+      <a href="#" class="nav-link soon"><span>Mesothelioma</span><span class="dot dot-soon"></span></a>
+    </div>
+    <div class="nav-group">
+      <span class="nav-group-label">Malignancy</span>
+      <a href="#" class="nav-link soon"><span>Lung Cancer (WHO 2021)</span><span class="dot dot-soon"></span></a>
+      <a href="#" class="nav-link soon"><span>Staging & Workup</span><span class="dot dot-soon"></span></a>
+      <a href="#" class="nav-link soon"><span>Targeted Therapy & IO</span><span class="dot dot-soon"></span></a>
+    </div>
+    <div class="nav-group">
+      <span class="nav-group-label">Sleep</span>
+      <a href="#" class="nav-link soon"><span>OSA</span><span class="dot dot-soon"></span></a>
+      <a href="#" class="nav-link soon"><span>OHS</span><span class="dot dot-soon"></span></a>
+      <a href="#" class="nav-link soon"><span>Sleep Hypoventilation Syndromes</span><span class="dot dot-soon"></span></a>
+    </div>
+    <div class="nav-group">
+      <span class="nav-group-label">Occupational</span>
+      <a href="#" class="nav-link soon"><span>Pneumoconioses</span><span class="dot dot-soon"></span></a>
+      <a href="#" class="nav-link soon"><span>Other Occupational Lung Dx</span><span class="dot dot-soon"></span></a>
+    </div>
+    <div class="nav-group">
+      <span class="nav-group-label">Ventilation</span>
+      <a href="#" class="nav-link soon"><span>Respiratory Failure</span><span class="dot dot-soon"></span></a>
+      <a href="#" class="nav-link soon"><span>NIV & IMV</span><span class="dot dot-soon"></span></a>
+    </div>
+  </aside>
+  <main class="main">
+    <p class="section-title">Pulmonary Vascular Disease</p>
+    <div class="cards">
+      <a href="#" class="card soon"><div class="card-num">01</div><div class="card-name">Pulmonary Embolism</div><div class="card-sub">Wells score, PERC, D-dimer, CTPA, sPESI, submassive vs massive PE, NOAC therapy, thrombolysis</div><span class="card-status status-soon">Soon</span></a>
+      <a href="#" class="card soon"><div class="card-num">02</div><div class="card-name">Pulmonary Hypertension</div><div class="card-sub">WHO/WSPH 2022 classification (Group 1–5), ESC/ERS 2022 risk stratification, PAH-specific therapy, RHC</div><span class="card-status status-soon">Soon</span></a>
+      <a href="#" class="card soon"><div class="card-num">03</div><div class="card-name">CTEPH</div><div class="card-sub">Chronic thromboembolic PH, PEA surgery, riociguat, balloon pulmonary angioplasty</div><span class="card-status status-soon">Soon</span></a>
+    </div>
+    <p class="section-title">Pleural Diseases</p>
+    <div class="cards">
+      <a href="#" class="card soon"><div class="card-num">04</div><div class="card-name">Pleural Effusion</div><div class="card-sub">Light's criteria (exudate vs transudate), diagnostic algorithm, thoracentesis, causes, management</div><span class="card-status status-soon">Soon</span></a>
+      <a href="#" class="card soon"><div class="card-num">05</div><div class="card-name">Pneumothorax</div><div class="card-sub">BTS 2023 classification & volume formulae, primary vs secondary, management algorithm, tension PTX</div><span class="card-status status-soon">Soon</span></a>
+      <a href="#" class="card soon"><div class="card-num">06</div><div class="card-name">Mesothelioma</div><div class="card-sub">Asbestos exposure, epithelioid vs sarcomatoid, staging, cytology/biopsy, chemotherapy, novel agents</div><span class="card-status status-soon">Soon</span></a>
+    </div>
+    <p class="section-title">Lung Malignancy</p>
+    <div class="cards">
+      <a href="#" class="card soon"><div class="card-num">07</div><div class="card-name">Lung Cancer — WHO 2021 Classification</div><div class="card-sub">NSCLC (adenocarcinoma, SCC, LCNEC) vs SCLC, adenocarcinoma spectrum (AIS→invasive), molecular subtypes</div><span class="card-status status-soon">Soon</span></a>
+      <a href="#" class="card soon"><div class="card-num">08</div><div class="card-name">Staging, CXR & CT Features</div><div class="card-sub">TNM 9th edition, solitary pulmonary nodule approach (Fleischner 2017), CXR signs in malignancy</div><span class="card-status status-soon">Soon</span></a>
+      <a href="#" class="card soon"><div class="card-num">09</div><div class="card-name">Targeted Therapy & Immunotherapy</div><div class="card-sub">EGFR, ALK, ROS1, KRAS G12C, PD-L1/PD-1 inhibitors — biomarker-driven therapy, toxicity management</div><span class="card-status status-soon">Soon</span></a>
+      <a href="#" class="card soon"><div class="card-num">10</div><div class="card-name">Carcinoid & Neuroendocrine Tumours</div><div class="card-sub">Typical vs atypical carcinoid, LCNEC, SCLC spectrum, somatostatin analogues, PRRT</div><span class="card-status status-soon">Soon</span></a>
+    </div>
+    <p class="section-title">Sleep & Ventilatory Disorders</p>
+    <div class="cards">
+      <a href="#" class="card soon"><div class="card-num">11</div><div class="card-name">Obstructive Sleep Apnea (OSA)</div><div class="card-sub">STOP-BANG, AHI severity, polysomnography, CPAP therapy, mandibular advancement, consequences</div><span class="card-status status-soon">Soon</span></a>
+      <a href="#" class="card soon"><div class="card-num">12</div><div class="card-name">Obesity Hypoventilation Syndrome (OHS)</div><div class="card-sub">Pickwickian syndrome, criteria, NIV vs CPAP, overlap with OSA, weight loss management</div><span class="card-status status-soon">Soon</span></a>
+      <a href="#" class="card soon"><div class="card-num">13</div><div class="card-name">Central Sleep Apnea & CSR</div><div class="card-sub">Cheyne-Stokes respiration in heart failure, adaptive servo-ventilation, central apnea causes</div><span class="card-status status-soon">Soon</span></a>
+    </div>
+    <p class="section-title">Occupational Lung Diseases</p>
+    <div class="cards">
+      <a href="#" class="card soon"><div class="card-num">14</div><div class="card-name">Pneumoconioses</div><div class="card-sub">Silicosis, coal worker's pneumoconiosis, asbestosis, berylliosis — HRCT features, compensation</div><span class="card-status status-soon">Soon</span></a>
+      <a href="#" class="card soon"><div class="card-num">15</div><div class="card-name">Other Occupational Lung Diseases</div><div class="card-sub">Byssinosis, occupational asthma, RADS, toxic inhalation injury, flock worker's lung</div><span class="card-status status-soon">Soon</span></a>
+    </div>
+    <p class="section-title">Respiratory Failure & Ventilation</p>
+    <div class="cards">
+      <a href="#" class="card soon"><div class="card-num">16</div><div class="card-name">Respiratory Failure</div><div class="card-sub">Type I vs Type II, ABG interpretation, A-a gradient, causes, acute-on-chronic hypercapnia</div><span class="card-status status-soon">Soon</span></a>
+      <a href="#" class="card soon"><div class="card-num">17</div><div class="card-name">Non-Invasive Ventilation (NIV)</div><div class="card-sub">CPAP vs BiPAP, indications (AECOPD, CRF, post-extubation), contraindications, settings</div><span class="card-status status-soon">Soon</span></a>
+      <a href="#" class="card soon"><div class="card-num">18</div><div class="card-name">ARDS</div><div class="card-sub">Berlin definition, lung-protective ventilation, prone positioning, neuromuscular blockade, ECMO</div><span class="card-status status-soon">Soon</span></a>
+    </div>
+  </main>
+</div>
+</body>
+</html>
